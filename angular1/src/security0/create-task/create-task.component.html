@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header bg-primary">
+        <h2>
+            create-task component
+        </h2>
+    </div>
+    <div class="card-body">
+        <div *ngIf="!authService.isWriter()" class="alert alert-danger">
+            <p>you are not authorized to create a task</p>
+        </div>
+        <div *ngIf="authService.isWriter()">
+            <form #f="ngForm" (ngSubmit)="onSave(f.value)">
+                <div class="form-group">
+                    <label class="control-label">name</label>
+                    <input type="text" name="name" ngModel required class="form-control"/>
+                </div>
+                <button type="submit" [disabled]="!f.valid" class="btn btn-secondary">create</button>
+            </form>
+        </div>
+    </div>
+</div>

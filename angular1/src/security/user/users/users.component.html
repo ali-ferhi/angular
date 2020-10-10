@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header bg-primary">
+        <h2>list of users</h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tr class="table-primary">
+                <th>id</th>
+                <th>name</th>
+                <th>roles</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td *ngFor="let role of user.roles">{{role.name}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button (click)="onRegister()" class="btn btn-secondary">register a user</button>
+    </div>
+</div>

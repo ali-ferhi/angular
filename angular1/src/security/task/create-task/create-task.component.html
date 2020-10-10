@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header bg-primary">
+        <h2>
+            create a new task
+        </h2>
+    </div>
+    <div class="card-body">
+        <div class="col-md-6">
+            <div *ngIf="creationMsg" class="alert alert-danger">
+                {{creationMsg}}
+            </div>
+            <form #f="ngForm" (ngSubmit)="onCreate(f.value)">
+                <div class="form-group">
+                    <label class="control-label">name</label>
+                    <input type="text" name="name" ngModel required class="form-control"/>
+                </div>
+                <button type="submit" [disabled]="!f.valid" class="btn btn-secondary">create</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-header bg-primary">
+        <h2>
+            personal space
+        </h2>
+    </div>
+    <div class="card-body">
+        <p>welcome <strong>{{this.userService.currentUser.name}}</strong> in your personal space</p>
+    </div>
+    <div class="card-footer">
+        <button *ngIf="this.userService.currentUser.isAdmin()" routerLink="users" class="btn btn-secondary">users</button>
+            
+        <button (click)="onLogout()" class="btn btn-secondary">logout</button>
+    </div>
+</div>

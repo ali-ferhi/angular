@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header bg-primary">
+        <h2>
+            tasks component
+        </h2>
+    </div>
+    <div class="card-body">
+        <button *ngIf="authService.isWriter()" (click)="onCreateTask()" class="btn btn-secondary">create task</button>
+        <table class="table">
+            <tr class="table-primary">
+                <th>id</th>
+                <th>name</th>
+            </tr>
+            <tr *ngFor="let task of tasks">
+                <td>{{task.id}}</td>
+                <td>{{task.name}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

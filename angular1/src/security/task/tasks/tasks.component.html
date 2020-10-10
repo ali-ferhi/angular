@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header bg-primary">
+        <h2>
+            list of tasks
+        </h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tr class="table-primary">
+                <th>id</th>
+                <th>name</th>
+            </tr>
+            <tr *ngFor="let task of tasks">
+                <td>{{task.id}}</td>
+                <td>{{task.name}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button *ngIf="userService.currentUser.isAdmin() || userService.currentUser.isWriter()" 
+            (click)="onCreateTask()" class="btn btn-secondary">create a task</button>
+    </div>
+</div>
